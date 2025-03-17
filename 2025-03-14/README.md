@@ -27,10 +27,10 @@ This repository contains solutions to the given practical questions.
 ![Output](./Question%204/Output4.png) 
 
 ## Question 5 -> 
-## Reverse the left and right numbers like
-## You must use only a loop
-## input 13
-## output 6 5 4 3 2 1 7 13 12 11 10 9 8
+### Reverse the left and right numbers like
+### You must use only a loop
+### input 13
+### output 6 5 4 3 2 1 7 13 12 11 10 9 8
 
 - Reverses the first half of the sequence and prints the second half as is.
 - Uses a `for` loop to split and rearrange numbers.
@@ -39,9 +39,9 @@ This repository contains solutions to the given practical questions.
 
 ## Question 6->
 
-## Create a student class
-## create 5 student objects and store it in a proper datastructure
-## find the average marks of the students
+### Create a student class
+### create 5 student objects and store it in a proper datastructure
+### find the average marks of the students
 
 - Implements a `Student` class with attributes `name` and `marks`.
 - Stores five student objects in an `ArrayList`.
@@ -50,9 +50,9 @@ This repository contains solutions to the given practical questions.
 ![Output](./Question%206/Output6.png) 
 
 ## Question 7 -> 
-## Implement classes for a Library
-## There are diffrent type of books are available in the library like Printed books, E books, and Audio books
-## You must use inhertance, polymorphism, encapuslation...
+### Implement classes for a Library
+### There are diffrent type of books are available in the library like Printed books, E books, and Audio books
+### You must use inhertance, polymorphism, encapuslation...
 
 - Implements a `Library` system using Object-Oriented Programming (OOP) concepts.
 - Uses inheritance for `PrintedBook`, `EBook`, and `AudioBook` classes.
