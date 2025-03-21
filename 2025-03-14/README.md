@@ -61,9 +61,9 @@ This repository contains solutions to the given practical questions.
 ![Output](./Question%207/Output7.png) 
 
 ## Question 8 ->
-## Implement classes for the given scenario:
-## 	- A reatail store which can store,edit,and delete multible products like fruits, vegetables, grocery, etc..
-##	- display the avilabe products like price, name,	quantity
+### Implement classes for the given scenario:
+### 	- A reatail store which can store,edit,and delete multible products like fruits, vegetables, grocery, etc..
+###	- display the avilabe products like price, name,	quantity
 
 ---
 This project follows Java Programming principles in Java to solve practical problems.
