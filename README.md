@@ -39,7 +39,6 @@ IT3232_E-Commerce_Practicals/
 │   ├── Question 5
 │   ├── Question 6
 │   ├── Question 7
-│   ├── Question 8
 │── README.md (This file)
 ```
 
