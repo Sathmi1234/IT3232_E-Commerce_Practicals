@@ -9,7 +9,7 @@ Each practical is organized in a separate folder with its own **README.md** file
 | Date       | Practical Name            | Folder Link |
 |------------|--------------------------|-------------|
 | 2025-03-14 | Simple Java Exercises | [Day 1](/2025-03-14/README.md) |
-| 2025-03-21| Simple Spring boot web service to diplay text | [Day 2](/2025-03-21/README.md) |
+| 2025-03-21| Simple Spring boot web service to display text | [Day 2](/2025-03-21/README.md) |
 
 ## How to Use
 
