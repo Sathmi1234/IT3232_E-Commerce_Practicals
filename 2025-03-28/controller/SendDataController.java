@@ -12,4 +12,8 @@ public class SendDataController {
 	public String MyAge(@PathVariable("ag") int age) {
 		return "My age is " + age;
 	}
+	@GetMapping("/information/{ag},{nm}")
+	public String MyDetails(@PathVariable("ag") int age,@PathVariable("nm") String name) {
+		return "My name is "+name+"\nMy age is "+age;
+	}
 }
