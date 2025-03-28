@@ -10,6 +10,7 @@ Each practical is organized in a separate folder with its own **README.md** file
 |------------|--------------------------|-------------|
 | 2025-03-14 | Simple Java Exercises | [Day 1](/2025-03-14/README.md) |
 | 2025-03-21| Simple Spring boot web service to display text | [Day 2](/2025-03-21/README.md) |
+| 2025-03-28| Sending data through parameters | [Day 3](/2025-03-28/README.md) |
 
 ## How to Use
 
@@ -41,20 +42,6 @@ IT3232_E-Commerce_Practicals/
 │   ├── Question 7
 │── README.md (This file)
 ```
-
----
-
-## 📖 How to Use This Repository
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/Sathmi1234/IT3232_E-Commerce_Practicals.git
-   cd IT3232_E-Commerce_Practicals
-   ```
-2. **Navigate to the relevant folder** and follow the instructions in the `README.md` file.
-3. **Import Spring Boot projects** into your preferred IDE (Eclipse, IntelliJ IDEA, etc.).
-4. **Run the applications** as Spring Boot applications.
-5. **Access the endpoints** through a web browser or API testing tools like Postman.
 
 ---
 
