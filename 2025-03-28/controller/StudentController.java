@@ -17,5 +17,11 @@ public class StudentController {
 	Student s1 = new Student("Bob",23,"IT","2020ict150",3.3);
 	Student s2 = new Student("Alice",22,"IT","2020ict200",3.9);
 	Student s3 = new Student("John",25,"IT","2020ict250",2.5);
+	
+	
+	@GetMapping("/studetails")
+	public Student getStudentDetails() {
+		return s1;
+	}
 
 }
