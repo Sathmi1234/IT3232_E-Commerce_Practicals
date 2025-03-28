@@ -20,6 +20,12 @@ public class StudentController {
 	
 	List<Student> students = new ArrayList<Student>();
 	
+	public StudentController() {
+		students.add(s1);
+		students.add(s2);
+		students.add(s3);
+	}
+	
 	@GetMapping("/studetails")
 	public Student getStudentDetails() {
 		return s1;
@@ -27,10 +33,17 @@ public class StudentController {
 	
 	@GetMapping("/allstudetails")
 	public List<Student> getAllStudentDetails() {
-		students.add(s1);
-		students.add(s2);
-		students.add(s3);
 		return students;
+	}
+	
+	@GetMapping("/getstudentbyReg/{reg}")
+	public Student getstudentbyReg(@PathVariable("reg") String regNo) {
+		for(Student student:students) {
+			if(student.getRegNo().equals(regNo)) {
+				return student;
+			}
+		}
+		return null;
 	}
 
 
