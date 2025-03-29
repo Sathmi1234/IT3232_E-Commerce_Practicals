@@ -97,4 +97,14 @@ public class StudentController {
 		return null;		
 	}
 
+	//delete
+	@GetMapping("/deleteStudent/{reg}")
+	public List<Student> deleteStudent(@PathVariable("reg") String regNo){
+		for(Student student:students) {
+			if(student.getRegNo().equals(regNo)) {
+				students.remove(student);
+			}
+		}
+		return students;
+	}
 }
