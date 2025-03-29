@@ -56,5 +56,13 @@ public class StudentController {
 		}
 		return studentbetween20and30;
 	}
-	
+
+	//sort students by their gpa
+	@GetMapping("/sortbyGPA")
+	public List<Student> getSortedStudentbyGPA(){
+		students.sort(Comparator.comparing(Student::getGpa));
+		return students;
+	}
+	//create crud operations for students
+
 }
