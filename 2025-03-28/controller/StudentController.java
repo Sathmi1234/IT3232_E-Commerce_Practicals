@@ -45,6 +45,7 @@ public class StudentController {
 		}
 		return null;
 	}
+
 	//find the students who's age is between 20 and 23
 	List<Student> studentbetween20and30 = new ArrayList<Student>();
 	@GetMapping("/studentbetween20and30")
@@ -63,6 +64,14 @@ public class StudentController {
 		students.sort(Comparator.comparing(Student::getGpa));
 		return students;
 	}
-	//create crud operations for students
 
+	//create crud operations for students
+	//create
+	@GetMapping("/addStudent/{nm},{ag},{crs},{reg},{gp}")
+	public List<Student> addStudent(@PathVariable("nm") String name,@PathVariable("ag") int age,@PathVariable("crs") String course,@PathVariable("reg") String regNo,@PathVariable("gp") double gpa){
+		Student newstu = new Student(name,age,course,regNo,gpa);
+		students.add(newstu);
+		return students;
+	}
+	
 }
