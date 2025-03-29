@@ -73,5 +73,28 @@ public class StudentController {
 		students.add(newstu);
 		return students;
 	}
-	
+
+	//update
+	@GetMapping("/updateStudent/{reg},{nm},{ag},{crs},{gp}")
+	public Student updateStudent(@PathVariable("nm") String name,@PathVariable("ag") int age,@PathVariable("crs") String course,@PathVariable("reg") String regNo,@PathVariable("gp") double gpa){
+		for(Student student:students) {
+			if(student.getRegNo().equals(regNo)) {
+				if(age!=0 && age>0){
+					student.setAge(age);					
+				}
+				if(!course.equals("")) {
+					student.setCourse(course);					
+				}
+				if(gpa>0 && gpa<4) {
+					student.setGpa(gpa);					
+				}
+				if(!name.equals("")) {
+					student.setName(name);					
+				}
+				return student;
+			}
+		}
+		return null;		
+	}
+
 }
