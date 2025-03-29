@@ -45,6 +45,16 @@ public class StudentController {
 		}
 		return null;
 	}
-
-
+	//find the students who's age is between 20 and 23
+	List<Student> studentbetween20and30 = new ArrayList<Student>();
+	@GetMapping("/studentbetween20and30")
+	public List<Student> getStudentBetween() {
+		for(Student student:students) {
+			if(20<student.getAge() && student.getAge()<30 ) {
+				studentbetween20and30.add(student);
+			}
+		}
+		return studentbetween20and30;
+	}
+	
 }
