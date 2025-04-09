@@ -50,6 +50,7 @@ GET /app/mapstudentAll
 ```
 
 **Sample Output:**
+
 ![Output](./GetAllStudents.png) 
 
 
@@ -59,6 +60,7 @@ GET /app/mapstudent/2020ict150
 ```
 
 **Sample Output:**
+
 ![Output](./GetStudentByReg.png) 
 
 #### Add New Student
@@ -77,6 +79,7 @@ POST /app/add
 ```
 
 **Sample Output:**
+
 ![Output](./AddStudent.png) 
 
 #### Update Student
@@ -94,6 +97,7 @@ PUT /app/update/2020ict300
 ```
 
 **Sample Output:**
+
 ![Output](./UpdateStudent.png) 
 
 #### Delete Student
@@ -102,6 +106,7 @@ DELETE /app/delStu/2020ict300
 ```
 
 **Sample Output:**
+
 ![Output](./DeleteStudent.png) 
 
 ### Course API Examples
@@ -112,6 +117,7 @@ GET /appCourse/allCourses
 ```
 
 **Sample Output:**
+
 ![Output](./AllCourses.png) 
 
 #### Get Course by Code
@@ -120,6 +126,7 @@ GET /appCourse/coursebyCode/101
 ```
 
 **Sample Output:**
+
 ![Output](./GetCourseByCode.png) 
 
 #### Add New Course
@@ -138,6 +145,7 @@ POST /appCourse/add
 ```
 
 **Sample Output:**
+
 ![Output](./AddCourse.png) 
 
 #### Delete Course
@@ -146,6 +154,7 @@ DELETE /appCourse/delCourse/101
 ```
 
 **Sample Output:**
+
 ![Output](./DeleteCourse.png) 
 
 #### Update Course
@@ -164,6 +173,7 @@ PUT /appCourse/updateCourse/202
 ```
 
 **Sample Output:**
+
 ![Output](./UpdateCourse.png) 
 
 ## Technologies Used
