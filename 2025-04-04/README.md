@@ -32,6 +32,7 @@ The project follows a standard Spring Boot application structure with the follow
 | GET | `/appCourse/allCourses` | Get all courses |
 | POST | `/appCourse/add` | Add a new course |
 | DELETE | `/appCourse/delStu/{c}` | Delete a course by course code |
+| PUT | `/appCourse/updateCourse/{cd}` | Update a course by course code |
 
 ## Data Storage
 
