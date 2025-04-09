@@ -144,7 +144,7 @@ POST /appCourse/add
 }
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./AddCourse.png) 
 
@@ -153,7 +153,7 @@ POST /appCourse/add
 DELETE /appCourse/delCourse/101
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./DeleteCourse.png) 
 
@@ -172,7 +172,7 @@ PUT /appCourse/updateCourse/202
 }
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./UpdateCourse.png) 
 
