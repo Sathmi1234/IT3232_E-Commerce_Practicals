@@ -11,6 +11,7 @@ Each practical is organized in a separate folder with its own **README.md** file
 | 2025-03-14 | Simple Java Exercises | [Day 1](/2025-03-14/README.md) |
 | 2025-03-21| Simple Spring boot web service to display text | [Day 2](/2025-03-21/README.md) |
 | 2025-03-28| Sending data through parameters | [Day 3](/2025-03-28/README.md) |
+| 2025-04-04| CRUD Operations using Map and HashMap | [Day 4](/2025-04-04/README.md) |
 
 ## How to Use
 
