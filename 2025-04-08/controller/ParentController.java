@@ -29,4 +29,29 @@ public class ParentController<K,T> {
 		return objects.get(id);
     }
 
+	@PostMapping("/add/{id}")
+	public String addStudentMap(@RequestBody T object, @PathVariable("id") K id){
+		objects.put(id, object);
+		return "New Object Created Successfully!";
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public String deleStudentMap(@PathVariable("id") K id){
+		if(objects.get(id) != null) {
+			objects.remove(id);
+			return "Object Removed Successfully!";
+		}
+		
+		return "Coudn't find Object!";
+	}
+	
+	//Update Student
+	@PutMapping("/update/{id}")
+	public String updateStudentMap(@PathVariable("id") K id,@RequestBody T student){
+		if(objects.get(id) != null) {
+			objects.put(id, student);
+			return "Object Updated Successfully!";			
+		}
+		return "Coudn't find Object!";
+    }
 }
