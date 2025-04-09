@@ -38,5 +38,12 @@ public class MapController {
 	public Map<String, Student> getAllStudentsMap() {
 		return mstudents;
 	}
+    	
+    //Add Student
+	@PostMapping("/add")
+	public String addStudentMap(@RequestBody Student student){
+		mstudents.put(student.getRegNo(), student);
+		return "New Student Added";
+	}
 }
 
