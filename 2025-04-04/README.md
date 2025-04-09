@@ -1,4 +1,4 @@
-# IT3232 E-Commerce Practicals - Day 1 - 2025-03-28
+# IT3232 E-Commerce Practicals - Day 4 - 2025-04-04
 
 ## Project Overview
 
