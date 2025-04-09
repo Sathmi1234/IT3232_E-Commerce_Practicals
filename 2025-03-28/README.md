@@ -1,4 +1,4 @@
-# IT3232 E-Commerce Practicals - Day 1 - 2025-03-28
+# IT3232 E-Commerce Practicals - Day 3 - 2025-03-28
 
 ## Project Overview
 This Spring Boot web service application demonstrates basic REST API endpoints for sending data and managing student information.
