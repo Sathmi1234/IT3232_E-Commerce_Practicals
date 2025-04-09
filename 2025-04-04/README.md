@@ -62,10 +62,11 @@ GET /app/mapstudent/2020ict150
 ![Output](./GetStudentByReg.png) 
 
 #### Add New Student
-```bash
+```
 POST /app/add
-Content-Type: application/json
+```
 
+```bash
 {
   "name": "Sarah",
   "age": 21,
@@ -79,10 +80,10 @@ Content-Type: application/json
 ![Output](./AddStudent.png) 
 
 #### Update Student
-```bash
+```
 PUT /app/update/2020ict300
-Content-Type: application/json
-
+```
+```bash
 {
   "name": "Sarah Smith",
   "age": 22,
