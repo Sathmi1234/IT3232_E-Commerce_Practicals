@@ -49,7 +49,7 @@ Request Body:
 ```
 **Output:**
 
-![Output](./AddStudent.png) 
+![Output](./3.AddStudent.png) 
 
 #### Update Student
 ```
@@ -152,9 +152,6 @@ The application is preloaded with the following data:
 - C++ (Code: 123, Duration: 2.5 years, Year: 3)
 - HTML++ (Code: 123, Duration: 1.5 years, Year: 1)
 - React Native (Code: 123, Duration: 3.5 years, Year: 2)
-
-
-## Getting Started
 
 ## Technologies Used
 - Spring Boot
