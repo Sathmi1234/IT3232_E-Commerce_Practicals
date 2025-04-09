@@ -40,7 +40,7 @@ The application uses in-memory storage with `HashMap` to store the data:
 - Students are stored with registration number as the key
 - Courses are stored with course code as the key
 
-## Example Usage & Sample Outputs
+## Example Usage & Outputs
 
 ### Student API Examples
 
@@ -49,7 +49,7 @@ The application uses in-memory storage with `HashMap` to store the data:
 GET /app/mapstudentAll
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./GetAllStudents.png) 
 
@@ -59,7 +59,7 @@ GET /app/mapstudentAll
 GET /app/mapstudent/2020ict150
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./GetStudentByReg.png) 
 
@@ -78,7 +78,7 @@ POST /app/add
 }
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./AddStudent.png) 
 
@@ -96,7 +96,7 @@ PUT /app/update/2020ict300
 }
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./UpdateStudent.png) 
 
@@ -105,7 +105,7 @@ PUT /app/update/2020ict300
 DELETE /app/delStu/2020ict300
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./DeleteStudent.png) 
 
@@ -116,7 +116,7 @@ DELETE /app/delStu/2020ict300
 GET /appCourse/allCourses
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./AllCourses.png) 
 
@@ -125,7 +125,7 @@ GET /appCourse/allCourses
 GET /appCourse/coursebyCode/101
 ```
 
-**Sample Output:**
+**Output:**
 
 ![Output](./GetCourseByCode.png) 
 
