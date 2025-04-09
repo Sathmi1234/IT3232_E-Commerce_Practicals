@@ -45,5 +45,26 @@ public class MapController {
 		mstudents.put(student.getRegNo(), student);
 		return "New Student Added";
 	}
+    
+    //Delete Student
+	@DeleteMapping("/delStu/{reg}")
+	public String deleStudentMap(@PathVariable("reg") String regNo){
+		if(mstudents.get(regNo) != null) {
+			mstudents.remove(regNo);
+			return "Student removed";
+		}
+		
+		return "Coudn't find student";
+	}
+
+    	//Update Student
+	@PutMapping("/update/{reg}")
+	public String updateStudentMap(@PathVariable("reg") String regNo,@RequestBody Student student){
+		if(mstudents.get(regNo) != null) {
+			mstudents.put(student.getRegNo(), student);
+			return "Student Updated";			
+		}
+		return "Coudn't find student";
+	}
 }
 
