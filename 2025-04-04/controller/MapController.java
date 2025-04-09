@@ -29,5 +29,14 @@ public class MapController {
 		mstudents.put(John.getRegNo(),John);
 	}
 	
+    	@GetMapping("/mapstudent/{id}")
+	public Student getStudentMap(@PathVariable("id") String regno) {
+		return mstudents.get(regno);
+	}
+	
+	@GetMapping("/mapstudentAll")
+	public Map<String, Student> getAllStudentsMap() {
+		return mstudents;
+	}
 }
 
