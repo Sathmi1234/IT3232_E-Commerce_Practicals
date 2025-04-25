@@ -19,4 +19,8 @@ public class Employee {
 	
 	@ManyToOne
 	private Department department;
+	
+	@ManyToMany(mappedBy = "employees")
+	private List<Project> projects;
+
 }

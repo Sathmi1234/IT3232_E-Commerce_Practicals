@@ -11,5 +11,10 @@ import jakarta.persistence.ManyToMany;
 public class Project {
 	@Id
 	private String projectId;
-	private long totalCost;
+	
+	@Column(name="Project_Name")
+	private String name;
+	
+	@ManyToMany
+	private List<Employee> employees;
 }
