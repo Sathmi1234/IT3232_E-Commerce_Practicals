@@ -9,12 +9,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class Employee {
+public class Employee extends Person{
 	@Id
 	private String empId;
-	
-	private String name;
-	private int age;
 	private double salary;
 	
 	@ManyToOne
