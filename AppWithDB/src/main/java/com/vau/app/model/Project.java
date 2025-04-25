@@ -1,4 +1,4 @@
-package com.vau.app.day6.model;
+package com.vau.app.model;
 
 import java.util.List;
 

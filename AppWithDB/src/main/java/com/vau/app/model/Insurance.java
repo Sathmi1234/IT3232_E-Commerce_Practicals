@@ -1,4 +1,4 @@
-package com.vau.app.day6.model;
+package com.vau.app.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
