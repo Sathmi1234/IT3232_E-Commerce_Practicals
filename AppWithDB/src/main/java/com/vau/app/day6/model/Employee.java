@@ -16,4 +16,7 @@ public class Employee {
 	private String name;
 	private int age;
 	private double salary;
+	
+	@ManyToOne
+	private Department department;
 }
