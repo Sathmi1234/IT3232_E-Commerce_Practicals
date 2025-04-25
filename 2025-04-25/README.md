@@ -1,6 +1,6 @@
 # IT3232 E-Commerce Practicals - Day 7 - 2025-04-25  
 
-# [Continuation from last week](/2025-04-11/README.md)
+# Continuation from [last week](/2025-04-11/README.md)
 
 Building on last week's Employee Management System Spring Boot JPA project, the following updates have been implemented:
 
