@@ -13,6 +13,7 @@ Each practical is organized in a separate folder with its own **README.md** file
 | 2025-03-28| Sending data through parameters | [Day 3](/2025-03-28/README.md) |
 | 2025-04-04| CRUD Operations using Map and HashMap | [Day 4](/2025-04-04/README.md) |
 | 2025-04-08| CRUD Operations through a Parent controller | [Day 5](/2025-04-08/README.md) |
+| 2025-04-08| Connecting spring boot project with mysql DB | [Day 6](/2025-04-11/README.md) |
 
 ## How to Use
 
