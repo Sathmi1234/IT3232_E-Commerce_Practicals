@@ -22,5 +22,7 @@ public class Employee {
 	
 	@ManyToMany(mappedBy = "employees")
 	private List<Project> projects;
-
+	
+	@OneToOne(mappedBy="employee")
+	private Insurance insurance;
 }

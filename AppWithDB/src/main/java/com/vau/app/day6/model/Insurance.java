@@ -11,4 +11,8 @@ public class Insurance {
 	@Column(name="Insurance_Id")
 	private String insId;
 	private int years;
+	
+	@OneToOne
+	private Employee employee;
+
 }
