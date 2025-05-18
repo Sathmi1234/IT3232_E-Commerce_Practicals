@@ -4,6 +4,8 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Canteen {
@@ -12,7 +14,9 @@ public class Canteen {
 
     private String location;
 
+    @ManyToMany(mappedBy = "canteens")
     private List<Employee> employees;
 
+    @OneToMany(mappedBy = "canteen")
     private List<DailyMenu> dailyMenus;
 }
