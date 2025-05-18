@@ -1,4 +1,4 @@
-package com.vau.app.model;
+package com.vau.app.ica1;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
