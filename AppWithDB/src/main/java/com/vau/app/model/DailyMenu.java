@@ -5,6 +5,8 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class DailyMenu {
@@ -13,6 +15,8 @@ public class DailyMenu {
 
     private Date date;
 
+    @ManyToOne
+    @JoinColumn(name = "canteen_id")
     private Canteen canteen;
 
     private List<Food> foods;
