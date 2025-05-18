@@ -1,10 +1,16 @@
 package com.vau.app.model;
 
+import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Person {
-	private String name;
-	private String age;
-	private String gender;
+public abstract class Person {
+    @Id
+    private Long id;
+
+    private String name;
+
+    private int age;
+    
+    private String gender;
 }
