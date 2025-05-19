@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 
-@Entity
+//@Entity
 public class Canteen {
     @Id
     private Long id;

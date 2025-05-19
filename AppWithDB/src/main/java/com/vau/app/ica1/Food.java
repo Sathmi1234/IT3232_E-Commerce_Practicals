@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
-@Entity
+//@Entity
 public class Food {
     @Id
     private Long id;

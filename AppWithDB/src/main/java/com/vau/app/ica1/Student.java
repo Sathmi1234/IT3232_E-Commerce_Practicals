@@ -5,7 +5,7 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
-@Entity
+//@Entity
 public class Student extends Person {
     private String degree;
 
