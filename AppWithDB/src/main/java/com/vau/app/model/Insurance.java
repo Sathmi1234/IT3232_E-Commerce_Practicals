@@ -1,5 +1,7 @@
 package com.vau.app.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -12,8 +14,9 @@ public class Insurance {
 	private String insId;
 	private int years;
 	
-	@OneToOne
-	private Employee employee;
+//	@OneToOne
+//	@JsonBackReference
+//	private Employee employee;
 
 	public Insurance() {
 		super();
@@ -35,12 +38,12 @@ public class Insurance {
 		this.years = years;
 	}
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
+//	public Employee getEmployee() {
+//		return employee;
+//	}
+//
+//	public void setEmployee(Employee employee) {
+//		this.employee = employee;
+//	}
 
 }
