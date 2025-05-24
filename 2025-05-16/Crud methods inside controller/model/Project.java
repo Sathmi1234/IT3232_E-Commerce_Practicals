@@ -18,13 +18,12 @@ public class Project {
     
     private long totalCost;
     
-//    @ManyToMany
-//    @JoinTable(name="project_assignments",
-//    joinColumns = @JoinColumn(name="pro_id"),  // Fixed: This should reference the project's ID
-//    inverseJoinColumns = @JoinColumn(name="empid"))
-//    @JsonManagedReference
-//    private List<Employee> employees;
-//    
+    @ManyToMany
+    @JoinTable(name="project_assignments",
+    joinColumns = @JoinColumn(name="pro_id"),  // Fixed: This should reference the project's ID
+    inverseJoinColumns = @JoinColumn(name="empid"))
+    private List<Employee> employees;
+    
     public Project() {
         super();
     }
@@ -53,11 +52,11 @@ public class Project {
         this.totalCost = totalCost;
     }
     
-//    public List<Employee> getEmployees() {
-//        return employees;
-//    }
-//    
-//    public void setEmployees(List<Employee> employees) {
-//        this.employees = employees;
-//    }
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+    
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }

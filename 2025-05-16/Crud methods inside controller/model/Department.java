@@ -21,9 +21,8 @@ public class Department {
 	
 	private Date established;
 	
-	//@OneToMany(mappedBy="department")
-	//@JsonManagedReference
-	//private List<Employee> employees;
+	@OneToMany(mappedBy="department")
+	private List<Employee> employees;
 
 	public Department() {
 		
@@ -53,12 +52,12 @@ public class Department {
 		this.established = established;
 	}
 
-//	public List<Employee> getEmployees() {
-//		return employees;
-//	}
-//
-//	public void setEmployees(List<Employee> employees) {
-//		this.employees = employees;
-//	}
-//	
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+	
 }
