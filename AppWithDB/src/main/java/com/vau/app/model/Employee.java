@@ -15,18 +15,15 @@ public class Employee extends Person{
     private String empId;
     private double salary;
     
-    //@ManyToOne
-    //@JsonBackReference
-    //private Department department;
+    @ManyToOne
+    private Department department;
     
-//    @ManyToMany(mappedBy = "employees")
-//    @JsonBackReference  // Changed from @JsonManagedReference to @JsonBackReference
-//    private List<Project> projects;
-//    
-//    @OneToOne(mappedBy="employee")
-//    @JsonManagedReference
-//    private Insurance insurance;
-//    
+    @ManyToMany(mappedBy = "employees")
+    private List<Project> projects;
+    
+    @OneToOne(mappedBy="employee")
+    private Insurance insurance;
+    
     public Employee() {
         super();
     }
@@ -47,27 +44,27 @@ public class Employee extends Person{
         this.salary = salary;
     }
     
-//    public Department getDepartment() {
-//        return department;
-//    }
-//    
-//    public void setDepartment(Department department) {
-//        this.department = department;
-//    }
-//    
-//    public List<Project> getProjects() {
-//        return projects;
-//    }
-//    
-//    public void setProjects(List<Project> projects) {
-//        this.projects = projects;
-//    }
-//    
-//    public Insurance getInsurance() {
-//        return insurance;
-//    }
-//    
-//    public void setInsurance(Insurance insurance) {
-//        this.insurance = insurance;
-//    }
+    public Department getDepartment() {
+        return department;
+    }
+    
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+    
+    public List<Project> getProjects() {
+        return projects;
+    }
+    
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+    
+    public Insurance getInsurance() {
+        return insurance;
+    }
+    
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
 }

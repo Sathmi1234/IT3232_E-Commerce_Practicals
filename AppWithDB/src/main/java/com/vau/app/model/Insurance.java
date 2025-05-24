@@ -14,9 +14,8 @@ public class Insurance {
 	private String insId;
 	private int years;
 	
-//	@OneToOne
-//	@JsonBackReference
-//	private Employee employee;
+	@OneToOne
+	private Employee employee;
 
 	public Insurance() {
 		super();
@@ -38,12 +37,12 @@ public class Insurance {
 		this.years = years;
 	}
 
-//	public Employee getEmployee() {
-//		return employee;
-//	}
-//
-//	public void setEmployee(Employee employee) {
-//		this.employee = employee;
-//	}
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 
 }
