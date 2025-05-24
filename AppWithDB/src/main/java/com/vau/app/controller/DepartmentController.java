@@ -3,6 +3,8 @@ package com.vau.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vau.app.model.Department;
 import com.vau.app.repo.DepartmentRepo;
+import com.vau.app.service.DepartmentService;
 
 
 @RestController
@@ -21,40 +24,45 @@ import com.vau.app.repo.DepartmentRepo;
 public class DepartmentController {
 
 	@Autowired
-	private DepartmentRepo repo;
+	private DepartmentService service;
+	
 	
 	@GetMapping("/")
-	public List<Department> getDeps(){
-		return repo.findAll();
+	public ResponseEntity<List<Department>> getDepts(){
+		return new ResponseEntity<List<Department>>(service.getDeps(),HttpStatus.OK);
 	}
+	
 	
 	@GetMapping("/{id}")
-	public Department getDepwithId(@PathVariable("id") String id ) {
-		return repo.findById(id).get();
+	public ResponseEntity<Department> getDeptwithId(@PathVariable String id){
+		if(service.getDepwithId(id)==null) {
+			return new ResponseEntity<Department>(service.getDepwithId(id),HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Department>(service.getDepwithId(id),HttpStatus.OK);
 	}
 	
-	@PostMapping
-	public String addDept(@RequestBody Department department){
-		repo.save(department);
-		return "New Department Added";
+	@PostMapping("/")
+	public String addDep(@RequestBody Department department){
+		if(service.getDepwithId(department.getId())==null) {
+			return new String("Department ID already exists");
+		}
+			return new String(service.addDep(department));
 	}
 	
 	@DeleteMapping("/{id}")
-	public String deleteDept(@PathVariable("id") String id){
-		if(!repo.findById(id).isEmpty()) {
-			repo.deleteById(id);
-			return "Department removed";
+	public String deleteDep(@PathVariable("id") String id){
+		if(service.getDepwithId(id)==null) {
+			return new String("Couldn't find Department");
 		}
-		return "Couldn't Find Department";
-		
+		return new String(service.deleteDep(id));
 	}
 	
 	@PutMapping("/{id}")
-	public String updateDept(@PathVariable("id") String id,@RequestBody Department department){
-		if(!repo.findById(id).isEmpty()) {
-			repo.save(department);
-			return "Department updated";
+	public String updateDep(@PathVariable("id") String id,@RequestBody Department department){
+		if(service.getDepwithId(id)==null) {
+			return new String("Couldn't find Department");
 		}
-		return "Couldn't Find Department";
+		return new String(service.updateDep(id,department));
 	}
+	
 }
