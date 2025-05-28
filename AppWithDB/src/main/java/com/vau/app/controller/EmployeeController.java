@@ -3,6 +3,8 @@ package com.vau.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,41 +22,43 @@ import com.vau.app.repo.EmployeeRepo;
 @RequestMapping("/emp")
 public class EmployeeController {
 
-	@Autowired
-	private EmployeeRepo repo;
-	
-	@GetMapping("/")
-	public List<Employee> getEmps(){
-		return repo.findAll();
-	}
-	
-	@GetMapping("/{id}")
-	public Employee getEmpwithId(@PathVariable("id") String id ) {
-		return repo.findById(id).get();
-	}
-	
-	@PostMapping
-	public String addEmp(@RequestBody Employee employee){
-		repo.save(employee);
-		return "New Employee Added";
-	}
-	
-	@DeleteMapping("/{id}")
-	public String deleteEmp(@PathVariable("id") String id){
-		if(!repo.findById(id).isEmpty()) {
-			repo.deleteById(id);
-			return "Employee removed";
-		}
-		return "Couldn't Find Employee";
+		@Autowired
+		public EmployeeService service;
 		
-	}
-	
-	@PutMapping("/{id}")
-	public String updateEmp(@PathVariable("id") String id,@RequestBody Employee employee){
-		if(!repo.findById(id).isEmpty()) {
-			repo.save(employee);
-			return "Employee updated";
+		@GetMapping("/")
+		public ResponseEntity<List<Employee>> getEmp(){
+			return new ResponseEntity<List<Employee>>(service.getEmp(),HttpStatus.OK);
 		}
-		return "Couldn't Find Employee";
-	}
+		
+		
+		@GetMapping("/{id}")
+		public ResponseEntity<Employee> getEmptwithId(@PathVariable String id){
+			if(service.getEmpwithId(id)==null) {
+				return new ResponseEntity<Employee>(service.getEmpwithId(id),HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<Employee>(service.getEmpwithId(id),HttpStatus.OK);
+		}
+		
+		
+		@PostMapping("/")
+		public String addEmp(@RequestBody Employee employee){
+				return new String(service.addEmp(employee));
+		}
+		
+		@DeleteMapping("/{id}")
+		public String deleteEmp(@PathVariable("id") String id){
+			if(service.getEmpwithId(id)==null) {
+				return "Couldn't find Employee";
+			}
+			return new String(service.deleteEmp(id));
+		}
+		
+		@PutMapping("/{id}")
+		public String updateEmp(@PathVariable("id") String id,@RequestBody Employee employee){
+			if(service.updateEmp(id,employee)==null) {
+				return "Couldn't find Employee";
+			}
+			return new String(service.updateEmp(id,employee));
+		}
+		
 }

@@ -3,6 +3,8 @@ package com.vau.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,41 +22,36 @@ import com.vau.app.repo.InsuranceRepo;
 public class InsuranceController {
 
 	@Autowired
-	private InsuranceRepo repo;
+	public InsuranceService service;
 	
 	@GetMapping("/")
-	public List<Insurance> getIns(){
-		return repo.findAll();
+	public ResponseEntity<List<Insurance>> getDepts(){
+		return new ResponseEntity<List<Insurance>>(service.getDeps(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
-	public Insurance getInswithId(@PathVariable("id") String id ) {
-		return repo.findById(id).get();
+	public ResponseEntity<Insurance> getDeptwithId(@PathVariable String id){
+		if(service.getDepwithId(id)==null) {
+			return new ResponseEntity<Insurance>(service.getDepwithId(id),HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Insurance>(service.getDepwithId(id),HttpStatus.OK);
 	}
 	
-	@PostMapping
-	public String addIns(@RequestBody Insurance insurance){
-		repo.save(insurance);
-		return "New Insurance Added";
+	
+	@PostMapping("/")
+	public String addDep(@RequestBody Insurance insurance){
+			return new String(service.addDep(insurance));
 	}
 	
 	@DeleteMapping("/{id}")
-	public String deleteIns(@PathVariable("id") String id){
-		if(!repo.findById(id).isEmpty()) {
-			repo.deleteById(id);
-			return "Insurance removed";
-		}
-		return "Couldn't Find Insurance";
-		
+	public String deleteDep(@PathVariable("id") String id){
+		return new String(service.deleteDep(id));
 	}
 	
 	@PutMapping("/{id}")
-	public String updateIns(@PathVariable("id") String id,@RequestBody Insurance insurance){
-		if(!repo.findById(id).isEmpty()) {
-			repo.save(insurance);
-			return "Insurance updated";
-		}
-		return "Couldn't Find Insurance";
+	public String updateDep(@PathVariable("id") String id,@RequestBody Insurance insurance){
+		return new String(service.updateDep(id,insurance));
 	}
+	
 
 }
