@@ -22,7 +22,7 @@ public class DepartmentService {
 	
 	public Department getDepwithId(String id ) {
 		if(repo.findById(id).isEmpty()) {
-			return null;
+			throw new EntityNotFoundException("Department Not Found");
 		}
 		return repo.findById(id).get();
 	}
@@ -32,13 +32,13 @@ public class DepartmentService {
 			repo.save(department);
 			return "New Department Added";			
 		}
-		return null;
+		throw new DuplicateKeyException("Department already Exists");
 			
 	}
 	
 	public String deleteDep(String id) {
 		if(repo.findById(id).isEmpty()) {
-			return null;
+			throw new EntityNotFoundException("Department Not Found");
 		}
 		repo.deleteById(id);
 		return "Department removed";
@@ -47,7 +47,7 @@ public class DepartmentService {
 	
 	public String updateDep(String id, Department department) {
 		if(repo.findById(id).isEmpty()) {
-			return null;
+			throw new EntityNotFoundException("Department Not Found");
 		}
 		repo.save(department);
 		return "Department updated";

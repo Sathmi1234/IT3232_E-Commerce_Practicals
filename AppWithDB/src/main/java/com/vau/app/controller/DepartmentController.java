@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vau.app.model.Department;
 import com.vau.app.repo.DepartmentRepo;
-import com.vau.app.service.DepartmentService;
 
 
 @RestController
@@ -24,7 +23,7 @@ import com.vau.app.service.DepartmentService;
 public class DepartmentController {
 
 	@Autowired
-	private DepartmentService service;
+	public DepartmentService service;
 	
 	
 	@GetMapping("/")
@@ -43,25 +42,16 @@ public class DepartmentController {
 	
 	@PostMapping("/")
 	public String addDep(@RequestBody Department department){
-		if(service.getDepwithId(department.getId())==null) {
-			return new String("Department ID already exists");
-		}
 			return new String(service.addDep(department));
 	}
 	
 	@DeleteMapping("/{id}")
 	public String deleteDep(@PathVariable("id") String id){
-		if(service.getDepwithId(id)==null) {
-			return new String("Couldn't find Department");
-		}
 		return new String(service.deleteDep(id));
 	}
 	
 	@PutMapping("/{id}")
 	public String updateDep(@PathVariable("id") String id,@RequestBody Department department){
-		if(service.getDepwithId(id)==null) {
-			return new String("Couldn't find Department");
-		}
 		return new String(service.updateDep(id,department));
 	}
 	
