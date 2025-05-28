@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vau.app.model.Department;
-import com.vau.app.repo.DepartmentRepo;
+import com.vau.app.service.DepartmentService;
+
 
 
 @RestController

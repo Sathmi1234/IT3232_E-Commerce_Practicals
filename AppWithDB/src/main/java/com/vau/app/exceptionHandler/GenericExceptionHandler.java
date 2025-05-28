@@ -1,4 +1,4 @@
-package lk.ac.vau.fas.ict.exceptionHandler;
+package com.vau.app.exceptionHandler;
 
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
@@ -6,8 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.vau.app.model.ErrorResponse;
+
 import jakarta.persistence.EntityNotFoundException;
-import lk.ac.vau.fas.ict.model.ErrorResponse;
+
 
 @RestControllerAdvice
 public class GenericExceptionHandler {

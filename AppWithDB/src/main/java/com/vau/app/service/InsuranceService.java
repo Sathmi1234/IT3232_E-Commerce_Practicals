@@ -1,13 +1,15 @@
-package lk.ac.vau.fas.ict.service;
+package com.vau.app.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+import com.vau.app.model.Insurance;
+import com.vau.app.repo.InsuranceRepo;
+
 import jakarta.persistence.EntityNotFoundException;
-import lk.ac.vau.fas.ict.model.Insurance;
-import lk.ac.vau.fas.ict.repo.InsuranceRepo;
 
 @Service
 public class InsuranceService {
@@ -26,8 +28,8 @@ public class InsuranceService {
 	}
 	
 	public String addIns(Insurance insurance) {
-		if(repo.findById(insurance.getId()).isEmpty()) {
-			repo.save(department);
+		if(repo.findById(insurance.getInsId()).isEmpty()) {
+			repo.save(insurance);
 			return "New Insurance Added";			
 		}
 		throw new DuplicateKeyException("Insurance already Exists");

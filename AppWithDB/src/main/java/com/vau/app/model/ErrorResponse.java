@@ -1,4 +1,4 @@
-package lk.ac.vau.fas.ict.model;
+package com.vau.app.model;
 
 public class ErrorResponse {
 	private int statusCode;

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vau.app.model.Employee;
-import com.vau.app.repo.EmployeeRepo;
+import com.vau.app.service.EmployeeService;
+
+
 
 
 @RestController

@@ -1,13 +1,15 @@
-package lk.ac.vau.fas.ict.service;
+package com.vau.app.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+import com.vau.app.model.Employee;
+import com.vau.app.repo.EmployeeRepo;
+
 import jakarta.persistence.EntityNotFoundException;
-import lk.ac.vau.fas.ict.model.Employee;
-import lk.ac.vau.fas.ict.repo.EmployeeRepo;
 
 @Service
 public class EmployeeService {
@@ -26,7 +28,7 @@ public class EmployeeService {
 	}
 	
 	public String addEmp(Employee employee) {
-		if(repo.findById(employee.getId()).isEmpty()) {
+		if(repo.findById(employee.getEmpId()).isEmpty()) {
 			repo.save(employee);
 			return "New Employee Added";			
 		}
