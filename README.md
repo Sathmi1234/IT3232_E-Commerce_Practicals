@@ -16,6 +16,8 @@ Each practical is organized in a separate folder with its own **README.md** file
 | 2025-04-11| Connecting spring boot project with mysql DB | [Day 6](/2025-04-11/README.md) |
 | 2025-04-25| JoinTable, JoinColumn and Inheritance & Exercise | [Day 7](/2025-04-25/README.md) |
 | 2025-05-02| ICAE 01 | [Day 8](/2025-05-02%20(ICAE%2001)/README.md) |
+| 2025-05-16| Implementing CRUD | [Day 9](/2025-05-16/README.md) |
+| 2025-05-23| Error handling through Exceptions | [Day 10](/2025-05-23/README.md) |
 ## How to Use
 
 1. Clone the repository:
