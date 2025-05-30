@@ -52,5 +52,19 @@ public class DepartmentService {
 		repo.save(department);
 		return "Department updated";
 	}
+	
+	public List<String> getDepartmentNames() {
+		if(repo.getDeptNames().isEmpty()) {
+			throw new EntityNotFoundException("Department Not Found");
+		}
+		return repo.getDeptNames();
+	}
+	
+	public List<Department> searchName(String name) {
+		if(repo.getDeptByName(name).isEmpty()) {
+			throw new EntityNotFoundException("Department Not Found");
+		}
+		return repo.getDeptByName(name);
+	}
 }
 
