@@ -3,6 +3,7 @@ package com.vau.app.model;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -21,6 +22,7 @@ public class Department {
 	
 	private Date established;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="department")
 	private List<Employee> employees;
 
