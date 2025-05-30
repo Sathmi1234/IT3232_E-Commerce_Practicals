@@ -56,4 +56,13 @@ public class DepartmentController {
 		return new String(service.updateDep(id,department));
 	}
 	
+	@GetMapping("/names")
+	public ResponseEntity<List<String>> getDepartmentNames(){
+		return new ResponseEntity<List<String>>(service.getDepartmentNames(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/name/{name}")
+	public ResponseEntity<List<Department>> searchName(@PathVariable("name") String name){
+		return new ResponseEntity<List<Department>>(service.searchName(name),HttpStatus.OK);
+	}
 }
