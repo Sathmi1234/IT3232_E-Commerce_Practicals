@@ -66,4 +66,11 @@ public class EmployeeService {
 		}
 		return repo.searchByDep(depId);
 	}
+	
+	public List<Employee> findYoungest(){
+		if(repo.youngestEmp().isEmpty()) {
+			throw new EntityNotFoundException("Employee Not Found");
+		}
+		return repo.youngestEmp();
+	}
 }

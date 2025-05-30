@@ -76,5 +76,13 @@ public class EmployeeController {
 			return new ResponseEntity<List<Employee>>(service.searchEmpsByDep(depId),HttpStatus.OK);
 		}
 		
+		@GetMapping("/youngest")
+		public ResponseEntity<List<Employee>> findYoungest(){
+			if(service.findYoungest()==null) {
+				return new ResponseEntity<List<Employee>>(service.findYoungest(),HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<List<Employee>>(service.findYoungest(),HttpStatus.OK);
+		}
+		
 		
 }
