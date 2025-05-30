@@ -68,5 +68,13 @@ public class EmployeeController {
 			return new ResponseEntity<List<Employee>>(service.searchBySalary(min,max),HttpStatus.OK);
 		}
 		
+		@GetMapping("/byDep/{depId}")
+		public ResponseEntity<List<Employee>> searchEmpsByDep(@PathVariable("depId") String depId){
+			if(service.searchEmpsByDep(depId)==null) {
+				return new ResponseEntity<List<Employee>>(service.searchEmpsByDep(depId),HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<List<Employee>>(service.searchEmpsByDep(depId),HttpStatus.OK);
+		}
+		
 		
 }

@@ -59,4 +59,11 @@ public class EmployeeService {
 		}
 		return repo.searchEmpbySalRange(min,max);
 	}
+	
+	public List<Employee> searchEmpsByDep(String depId) {
+		if(repo.searchByDep(depId).isEmpty()) {
+			throw new EntityNotFoundException("Employee Not Found");
+		}
+		return repo.searchByDep(depId);
+	}
 }
