@@ -52,4 +52,11 @@ public class EmployeeService {
 		repo.save(employee);
 		return "Employee updated";
 	}
+	
+	public List<Employee> searchBySalary(int min, int max) {
+		if(repo.searchEmpbySalRange(min,max).isEmpty()) {
+			throw new EntityNotFoundException("Employee Not Found");
+		}
+		return repo.searchEmpbySalRange(min,max);
+	}
 }

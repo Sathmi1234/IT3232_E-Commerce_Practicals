@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vau.app.model.Employee;
 import com.vau.app.service.EmployeeService;
 
-
-
-
 @RestController
 @RequestMapping("/emp")
 public class EmployeeController {
@@ -62,5 +59,14 @@ public class EmployeeController {
 			}
 			return new String(service.updateEmp(id,employee));
 		}
+		
+		@GetMapping("/salaryRange/{min}/{max}")
+		public ResponseEntity<List<Employee>> searchBySalary(@PathVariable("min") int min,@PathVariable("max") int max){
+			if(service.searchBySalary(min,max)==null) {
+				return new ResponseEntity<List<Employee>>(service.searchBySalary(min,max),HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<List<Employee>>(service.searchBySalary(min,max),HttpStatus.OK);
+		}
+		
 		
 }
