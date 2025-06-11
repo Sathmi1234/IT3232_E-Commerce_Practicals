@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vau.app.model.Department;
+import com.vau.app.model.ViewDepartment;
 import com.vau.app.service.DepartmentService;
-
 
 
 @RestController
@@ -26,18 +26,13 @@ public class DepartmentController {
 	@Autowired
 	public DepartmentService service;
 	
-	
 	@GetMapping("/")
 	public ResponseEntity<List<Department>> getDepts(){
 		return new ResponseEntity<List<Department>>(service.getDeps(),HttpStatus.OK);
 	}
 	
-	
 	@GetMapping("/{id}")
 	public ResponseEntity<Department> getDeptwithId(@PathVariable String id){
-		if(service.getDepwithId(id)==null) {
-			return new ResponseEntity<Department>(service.getDepwithId(id),HttpStatus.NOT_FOUND);
-		}
 		return new ResponseEntity<Department>(service.getDepwithId(id),HttpStatus.OK);
 	}
 	
@@ -65,4 +60,20 @@ public class DepartmentController {
 	public ResponseEntity<List<Department>> searchName(@PathVariable("name") String name){
 		return new ResponseEntity<List<Department>>(service.searchName(name),HttpStatus.OK);
 	}
+	
+	@GetMapping("/empCount/{depid}")
+	public ResponseEntity<Integer> empCount(@PathVariable("depid") String depid){
+		return new ResponseEntity<Integer>(service.empCount(depid),HttpStatus.OK);
+	}
+	
+	@GetMapping("/empCountByView/{depid}")
+	public ResponseEntity<ViewDepartment> empCountFromView(@PathVariable("depid") String depid){
+		return new ResponseEntity<ViewDepartment>(service.empCountFromView(depid),HttpStatus.OK);
+	}
+	
+	@GetMapping("/empCountByViewAll")
+	public ResponseEntity<List<ViewDepartment>> empCountOfAllFromView(){
+		return new ResponseEntity<List<ViewDepartment>>(service.empCountOfAllFromView(),HttpStatus.OK);
+	}
+	
 }
