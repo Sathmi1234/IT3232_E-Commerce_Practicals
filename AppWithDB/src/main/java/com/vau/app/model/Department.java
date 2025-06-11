@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,6 +24,16 @@ public class Department {
 	@JsonIgnore
 	@OneToMany(mappedBy="department")
 	private List<Employee> employees;
+
+	public Department(String id, String depName, Date established) {
+		this.id = id;
+		this.depName = depName;
+		this.established = established;
+	}
+	
+	public Department(String id) {
+		this.id = id;
+	}
 
 	public Department() {
 		
